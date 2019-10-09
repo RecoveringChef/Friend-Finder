@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Friendship Survey</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Survey</h1>
+
+  <!--  bootstrap in a header/shorty jumbotron here -->
+
+
+
+
+  <!--  bootstrap in a form here -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center">Tell us About You</h1>
+        <br>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="form-group">
+              <label for="name">Your name:</label>
+              <input type="text" class="form-control" id="name" class="textinput">
+            </div>
+            <h3 class="panel-title">Answer the questions with the first answer that pops into your head.</h3>
+          </div>
+          <div class="panel-body">
+            <form method="POST" role="form">
+              <div class="form-group">
+                <label for="q1">I am friendly and outgoing.</label>
+                <select id="q1" class="questions">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q2">I enjoy outdoor activities.</label>
+                <select id="q2" class="questions">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q3">I would rather 'do stuff' than 'just hang out'</label>
+                <select id="q3" class="questions">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q4" class="questions">I am a major sports fan</label>
+                <select id="q4">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q5">I am very outdoorsy</label>
+                <select id="q5" class="questions">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q6">I am a big movie buff</label>
+                <select id="q6">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q7">Music is a huge part of my life</label>
+                <select id="q7">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q8">I beleive more in experiences than stuff</label>
+                <select id="q8">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q9">I am very driven for success</label>
+                <select id="q9">
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="q10">I beleive politics are important</label>
+                <select id="q10" >
+                  <option value="" selected>Select an option</option>
+                  <option value="1">1 (Strongly Disagree)</option>
+                  <option value="2">2 (Slightly Disagree)</option>
+                  <option value="3">3 (Neutral)</option>
+                  <option value="4">4 (Slightly Agree)</option>
+                  <option value="5">5 (Strongly Agree)</option>
+                </select>
+              </div>
+
+            </form>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn-sucess" id="submitBtn">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script>
+      //js HERE
+      $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        if ($("#name").val().trim() === "" || $(".questions").val().trim() === "") {
+          console.log("please answer all the questions");
+          return false
+        } else {
+          var user = {
+            name: $("#name").val().trim(),
+            scores: [parseInt($("#q1").val().trim()), parseInt($("#q2").val().trim()), parseInt($("#q3").val().trim()),  parseInt($("#q4").val().trim()),  parseInt($("#q5").val().trim()),  parseInt($("#q6").val().trim()),  parseInt($("#q7").val().trim()), parseInt($("#q8").val().trim()), parseInt($("#q9").val().trim()), parseInt($("#q10").val().trim())]
+          }
+
+          $.post("/api/friends", user, function (data) {
+            console.log("user added")
+            
+            //pop up modal with var answer FROM apiRout post
+
+          })
+        }             
+      })
+
+
+    </script>
+    <a href="../public/home.html">Home</a>
+</body>
+
+</html>
