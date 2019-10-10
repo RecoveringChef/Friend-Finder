@@ -40,22 +40,7 @@ module.exports = function (app) {
 
              var matchIndex = totalFriendScores.indexOf(minNum);
 
-             var bestMatch = friends[matchIndex];
-             
-           
-            
-            // if (diff < bestFriendScore) {
-            //     bestFriendScore = diff;
-            //     bestFriendImage = friends[all].photo;
-            //     bestFriendName = friends[all].name;
-            //     bestFriend = friends[all]
-            //     arrayScore = 0
-            //     all++
-            // } else {
-            //     diff= 0
-            //     all++
-            // }
-            
+             var bestMatch = friends[matchIndex];       
        
        
        
