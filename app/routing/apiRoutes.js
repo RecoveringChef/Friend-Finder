@@ -17,37 +17,50 @@ module.exports = function (app) {
         console.log(user);
         console.log(score);
 
-    //  //do math to compare
-    //     var friendIndex = 0;
-    //     var bestFriendName;
-    //     var bestFriendImage;
-    //     var bestFriend;
-    //     var bestFriendScore = 50;
+     //do math to compare
+        var friendIndex = 0;
+        var bestFriendName;
+        var bestFriendImage;
+        var bestFriend;
+        var bestFriendScore = 50;
+        var totalFriendScores =[];
+        for (var i = 0; i< friends.length; i++){
 
-    //     function compare(all) {
-    //         var arrayScore = friends[all].scores;
-    //         var diff = 0;
+            var arrayScore = friends[i].scores;
+            var diff = 0;
+            
+            for (var j = 0; j < arrayScore.length; j++) { 
+                diff += Math.abs(arrayScore[j] - score[j])  
+            }
+             totalFriendScores.push(diff)
+            }
+             var minNum = Math.min(...totalFriendScores)
 
-    //         for (var i = 0; i < arrayScore.length; i++) { 
-    //             diff += Math.abs(arrayScore[i] - score[i])  
-    //         }
-    //         if (diff < bestFriendScore) {
-    //             bestFriendScore = diff;
-    //             bestFriendImage = friends[all].photo;
-    //             bestFriendName = friends[all].name;
-    //             bestFriend = friends[all]
-    //             arrayScore = 0
-    //             all++
-    //         } else {
-    //             diff= 0
-    //             all++
-    //         }
-    //         compare(all)
-    //     }
-    //     compare(friendIndex);
+             console.log(minNum);
+
+             var matchIndex = totalFriendScores.indexOf(minNum);
+
+             var bestMatch = friends[matchIndex];
+             
+           
+            
+            // if (diff < bestFriendScore) {
+            //     bestFriendScore = diff;
+            //     bestFriendImage = friends[all].photo;
+            //     bestFriendName = friends[all].name;
+            //     bestFriend = friends[all]
+            //     arrayScore = 0
+            //     all++
+            // } else {
+            //     diff= 0
+            //     all++
+            // }
+            
        
-    //     user.scores = score;
-            res.json(user);
+       
+       
+        user.scores = score;
+            res.json(bestMatch);
         friends.push(user);
     });
 }
