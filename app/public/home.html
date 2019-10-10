@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-        <h1>Home</h1>
+  <div class="container">
+		<div class="jumbotron" style="background-color: rgba(114, 142, 235, 0.671);">
+      <div class="title"><h1>Friend Finder</h1></div>
+      <br>
+			<div class="slogan"><h3>Take our survey to find a compatible friend</h3></div>
+		</div>
+		<br/>
+		<button><i class="fa fa-pencil survey-button" aria-hidden="true" id="sub"> Click for Survey</i></button>
+  </div>
+  
+<br>
+<br>
 
-        <a href="../public/survey.html">Survey</a> 
+    <footer class="footer">
+      <div class="container">
+        <a href="/api/friends">API Friends List</a> 
+        <a href="/survey">  |  Survey</a> |
+      </div>
+    </footer>
+
+
+
+  <script>
+   $("#sub").on("click", function (go) {
+        event.preventDefault();
+        location.href = "/survey"
+   })
+                     
+  </script>
 </body>
 </html>

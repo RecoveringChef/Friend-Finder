@@ -2,39 +2,41 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Friendship Survey</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friendship Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-
-  <h1>Survey</h1>
-
-  <!--  bootstrap in a header/shorty jumbotron here -->
-
-
-
+    <div class="container">
+        <div class="jumbotron" style="background-color: rgba(114, 142, 235, 0.671);">
+          <div><h2>Friendship Survey</h2></div>
+            <br>
+          <div><h4>Let's talk about you...</h4></div>
+          
+        </div>
+      </div>
 
   <!--  bootstrap in a form here -->
 
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="text-center">Tell us About You</h1>
+        
         <br>
         <div class="panel panel-default">
           <div class="panel-heading">
             <div class="form-group">
-              <label for="name">Your name:</label>
+              <label for="name"><b>Your Name:</b></label>
               <input type="text" class="form-control" id="name" class="textinput">
             </div>
-            <h3 class="panel-title">Answer the questions with the first answer that pops into your head.</h3>
+            <h4 class="panel-title">Answer the questions with the first answer that pops into your head.</h4>
+            <br>
           </div>
           <div class="panel-body">
             <form method="POST" role="form">
@@ -139,7 +141,7 @@
               </div>
               <div class="form-group">
                 <label for="q10">I beleive politics are important</label>
-                <select id="q10" >
+                <select id="q10">
                   <option value="" selected>Select an option</option>
                   <option value="1">1 (Strongly Disagree)</option>
                   <option value="2">2 (Slightly Disagree)</option>
@@ -158,9 +160,34 @@
       </div>
     </div>
 
+  <div id="bestFriendModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content" ">
+			   <div class="modal-body text-center ">
+			        	<h4 class="modal-title ">YOUR MATCH:</h4>
+			
+				        <h5 id="friendName " class="text-center "></h5>
+			        	<img src=" " class="img-responive text-center " id="friendPhoto ">
+			        	<p id="friendBio " class="text-center "></p>
+		      	</div>
+			         <div class="modal-footer ">
+			    	    <button><i class="fa fa-pencil survey-button" aria-hidden="true" id="submitBtn"> Run Some Logic</i></button>
+		    	</div>
+		  </div>
+  	</div>
+	</div>
+
+    <footer class="footer">
+      <div class="container">
+        <a href="/api/friends">API Friends List</a> 
+        <a href="/">  |  Home</a> |
+      </div>
+    </footer>
 
 
-    <script>
+
+
+ <script>
       //js HERE
       $("#submitBtn").on("click", function (event) {
         event.preventDefault();
@@ -170,21 +197,26 @@
         } else {
           var user = {
             name: $("#name").val().trim(),
-            scores: [parseInt($("#q1").val().trim()), parseInt($("#q2").val().trim()), parseInt($("#q3").val().trim()),  parseInt($("#q4").val().trim()),  parseInt($("#q5").val().trim()),  parseInt($("#q6").val().trim()),  parseInt($("#q7").val().trim()), parseInt($("#q8").val().trim()), parseInt($("#q9").val().trim()), parseInt($("#q10").val().trim())]
+            scores: [parseInt($("#q1").val().trim()), parseInt($("#q2").val().trim()), parseInt($("#q3").val().trim()), parseInt($("#q4").val().trim()), parseInt($("#q5").val().trim()), parseInt($("#q6").val().trim()), parseInt($("#q7").val().trim()), parseInt($("#q8").val().trim()), parseInt($("#q9").val().trim()), parseInt($("#q10").val().trim())]
           }
 
           $.post("/api/friends", user, function (data) {
-            console.log("user added")
+            console.log("user added");
             
             //pop up modal with var answer FROM apiRout post
+            $("#matchImage").attr("src", data.photo);
+                  $("#bestFriendImage").attr("alt", data.name);
+                  $("#bestFriendName").text(data.name);
+                  $("#name").val()="";
+                  $("#photo").val()="";
 
           })
-        }             
+        }
       })
 
 
-    </script>
-    <a href="../public/home.html">Home</a>
+ </script>
+    
 </body>
 
 </html>
