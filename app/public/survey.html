@@ -154,7 +154,7 @@
             </form>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn-sucess" id="submitBtn">SUBMIT</button>
+            <button type="submit" data-toggle="modal" data-target="#bestFriendModal" class="btn btn-success" id="submitBtn">SUBMIT</button>
           </div>
         </div>
       </div>
@@ -162,16 +162,16 @@
 
   <div id="bestFriendModal" class="modal">
     <div class="modal-dialog">
-      <div class="modal-content" ">
+      <div class="modal-content" >
 			   <div class="modal-body text-center ">
 			        	<h4 class="modal-title ">YOUR MATCH:</h4>
 			
-				        <h5 id="friendName " class="text-center "></h5>
-			        	<img src=" " class="img-responive text-center " id="friendPhoto ">
-			        	<p id="friendBio " class="text-center "></p>
+				        <h5 id="bestMatch" class="text-center "></h5>
+			        	<img src=" " class="img-responive text-center " id="bestMatchIMG">
+			        	
 		      	</div>
 			         <div class="modal-footer ">
-			    	    <button><i class="fa fa-pencil survey-button" aria-hidden="true" id="submitBtn"> Run Some Logic</i></button>
+			    	    <button data-dismiss="modal" class ="btn"><i class="fa fa-pencil survey-button"   id="submitBtn"> Try Again</i></button>
 		    	</div>
 		  </div>
   	</div>
@@ -205,12 +205,24 @@
             console.log(data);
             
             //pop up modal with var answer FROM apiRout post
-             //$("#matchImage").attr("src", data.photo);
-               //   $("#bestFriendImage").attr("alt", data.name);
-               //   $("#bestFriendName").text(data.name);
-               //   $("#name").val()="";
-               //   $("#photo").val()="";
-
+           
+            
+            
+            $("#bestMatchIMG").attr("src", data.photo);
+                  $("#bestMatch").attr("alt", data.name);
+             //    $("#bestMatchName").text(data.name);
+                 $("#name").val("");
+                 $("#photo").val("");
+                 $("#q10").val("");
+                 $("#q9").val("");
+                 $("#q8").val("");
+                 $("#q7").val("");
+                 $("#q6").val("");
+                 $("#q5").val("");
+                 $("#q4").val("");
+                 $("#q3").val("");
+                 $("#q2").val("");
+                 $("#q1").val("");
           })
         }
       })
